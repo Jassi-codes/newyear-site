@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: url("images/bg-flowers.png") no-repeat center center/cover;
+    font-family: 'Doodle', cursive;
+    color: #0e02b6;   /* COLOUR TEXT */
+}
+
+/* Center everything perfectly */
+.center {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(2px);
+}
+
+/* POPPING EFFECT */
+.pop {
+    animation: popIn 0.8s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+img {
+    max-width: 97vw;
+    max-height: 87vh;
+    width: auto;
+    height: auto;
+}
+
+/* CLOUD BUTTON ☁️ */
+.cloud-btn {
+    background: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 50px;
+    box-shadow: 
+        20px 10px 0 #fff,
+        -20px 10px 0 #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cloud-btn {
+    position: relative;
+    background: #ffffff;
+    border: none;
+    padding: 18px 40px;
+    font-size: 18px;
+    font-family: 'Comic Neue', cursive;
+    cursor: pointer;
+    margin: 15px;
+    border-radius: 50px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+
+/* cloud bumps */
+.cloud-btn::before,
+.cloud-btn::after {
+    content: "";
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cloud-btn::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud-btn::after {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    right: 20px;
+}
+
+.cloud-btn:hover {
+    transform: scale(1.08);
+}
+
+.message-container {
+    max-width: 900px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+    animation: popIn 0.8s ease-out;
+}
+.button-group {
+    margin-top: 40px;   /* pushes buttons downward */
+}
